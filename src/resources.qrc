@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/components/Sidebar.qml</file>
+        <file>qml/components/Workspace.qml</file>
+        <file>qml/components/ImageUploader.qml</file>
+        <file>qml/controls/ResizeControls.qml</file>
+        <file>qml/controls/CropControls.qml</file>
+        <file>qml/components/ui/CustomSpinBox.qml</file>
+        <file>qml/components/ui/CustomButton.qml</file>
+        <file>qml/components/ResultArea.qml</file>
+    
+        <file>icons/resize.svg</file>
+        <file>icons/crop.svg</file>
+        <file>icons/upload.svg</file>
+        <file>icons/error.svg</file>
+        <file>icons/save.svg</file>
+    </qresource>
+</RCC>
