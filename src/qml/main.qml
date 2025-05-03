@@ -16,10 +16,11 @@ ApplicationWindow {
         spacing: 0
 
         Sidebar {
-            onToolSelected: (toolId) => {
+            onToolSelected: (tool) => {
                 workspace.state = "edit"
-                workspace.currentTool = toolId
-                appController.setProcessor(toolId)
+                workspace.currentTool = tool.toolId
+                workspace.currentToolName = tool.toolName
+                appController.setProcessor(tool.toolId)
             }
         }
 

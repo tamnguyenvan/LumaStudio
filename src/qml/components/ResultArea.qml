@@ -80,7 +80,7 @@ Rectangle {
             }
 
             Label {
-                text: "Resized:"
+                text: "Result:"
                 font.pixelSize: 13
                 font.weight: Font.Medium
                 color: "#666666"
@@ -100,7 +100,7 @@ Rectangle {
             }
 
             Label {
-                text: imageInfo.size
+                text: imageInfo && imageInfo.size ? imageInfo.size : ""
                 font.pixelSize: 13
                 color: "#666666"
             }

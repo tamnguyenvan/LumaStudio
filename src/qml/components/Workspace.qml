@@ -9,6 +9,7 @@ Item {
     Layout.fillHeight: true
 
     property string currentTool: ""
+    property string currentToolName: ""
     property string currentImage: ""
     property var imageInfo: ({ width: 0, height: 0, size: "0 KB" })
     property string processedImage: ""
@@ -20,6 +21,7 @@ Item {
             name: "empty"
             PropertyChanges { target: root; currentImage: "" }
             PropertyChanges { target: root; currentTool: "" }
+            PropertyChanges { target: root; currentToolName: "" }
             PropertyChanges { target: root; processedImage: "" }
         },
         State {
@@ -28,6 +30,7 @@ Item {
         State {
             name: "result"
             PropertyChanges { target: root; currentTool: "" }
+            PropertyChanges { target: root; currentToolName: "" }
         }
     ]
 
@@ -41,8 +44,11 @@ Item {
             }
         }
 
+        function onProcessorChanged(processorName) {
+            root.imageInfo = appController.loadedImageInfo
+        }
+
         function onProcessingCompleted(result) {
-            console.log("processing completed:", result)
             root.processedImage = result
             root.state = "result"
         }
@@ -145,9 +151,8 @@ Item {
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     source: {
-                        console.log("current tool:", root.currentTool)
-                        return root.currentTool ? 
-                        "qrc:/qml/controls/" + root.currentTool + "Controls.qml" : ""
+                        return root.currentToolName ? 
+                        "qrc:/qml/controls/" + root.currentToolName.replace(" ", "") + "Controls.qml" : ""
                     }
                 }
             }

@@ -55,24 +55,95 @@ Rectangle {
     // Upload placeholder
     Column {
         anchors.centerIn: parent
-        spacing: 16
+        spacing: 24
         visible: !root.source
 
-        // 
-        Image {
-            source: "qrc:/icons/upload.svg"
+        Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
-            sourceSize.width: 64
-            sourceSize.height: 64
-            width: 64
-            height: 64
+            width: 96
+            height: 96
+            radius: width / 2
+            color: "#F5F5F7"
+            border.color: "#E5E5E5"
+            border.width: 1
+
+            Image {
+                source: "qrc:/icons/upload.svg"
+                anchors.centerIn: parent
+                sourceSize.width: 48
+                sourceSize.height: 48
+                width: 48
+                height: 48
+                opacity: 0.6
+            }
         }
 
-        Label {
+        Column {
             anchors.horizontalCenter: parent.horizontalCenter
-            text: "Drop image here or click to upload"
-            font.pixelSize: 15
-            color: "#666666"
+            spacing: 8
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "Drop image here"
+                font.pixelSize: 16
+                font.weight: Font.Medium
+                color: "#333333"
+            }
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "or click to browse"
+                font.pixelSize: 14
+                color: "#666666"
+            }
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "JPG, PNG or GIF up to 10MB"
+                font.pixelSize: 12
+                color: "#999999"
+                topPadding: 4
+            }
+        }
+    }
+
+    // Drag & Drop overlay
+    Rectangle {
+        id: dropOverlay
+        anchors.fill: parent
+        color: "#F5F5F7"
+        opacity: dropArea.containsDrag ? 1 : 0
+        visible: opacity > 0
+        border.color: "#007AFF"
+        border.width: 2
+        radius: 8
+
+        Column {
+            anchors.centerIn: parent
+            spacing: 16
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "Release to Upload"
+                font.pixelSize: 16
+                font.weight: Font.Medium
+                color: "#007AFF"
+            }
+
+            Image {
+                source: "qrc:/icons/upload.svg"
+                anchors.horizontalCenter: parent.horizontalCenter
+                sourceSize.width: 48
+                sourceSize.height: 48
+                width: 48
+                height: 48
+                opacity: 0.6
+            }
+        }
+
+        // Fade animation
+        Behavior on opacity {
+            NumberAnimation { duration: 150 }
         }
     }
 

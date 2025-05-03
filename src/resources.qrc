@@ -7,14 +7,28 @@
         <file>qml/components/ImageUploader.qml</file>
         <file>qml/controls/ResizeControls.qml</file>
         <file>qml/controls/CropControls.qml</file>
+        <file>qml/controls/CompressControls.qml</file>
+        <file>qml/controls/ConvertControls.qml</file>
+        <file>qml/controls/BlurFaceControls.qml</file>
+        <file>qml/controls/RemoveBgControls.qml</file>
+        <file>qml/controls/UpscaleControls.qml</file>
         <file>qml/components/ui/CustomSpinBox.qml</file>
         <file>qml/components/ui/CustomButton.qml</file>
+        <file>qml/components/ui/CustomColorPicker.qml</file>
         <file>qml/components/ResultArea.qml</file>
     
         <file>icons/resize.svg</file>
         <file>icons/crop.svg</file>
+        <file>icons/compress.svg</file>
+        <file>icons/convert.svg</file>
+        <file>icons/blur_face.svg</file>
+        <file>icons/remove_bg.svg</file>
+        <file>icons/upscale.svg</file>
         <file>icons/upload.svg</file>
         <file>icons/error.svg</file>
         <file>icons/save.svg</file>
+        <file>icons/clear.svg</file>
+        <file>icons/search.svg</file>
+        <file>icons/settings.svg</file>
     </qresource>
 </RCC>

@@ -55,6 +55,18 @@ ColumnLayout {
             root.updatingValues = false
         }
 
+        function onProcessorChanged(processorName) {
+            console.log("Processor changed:", processorName)
+            var loadedImageInfo = JSON.parse(appController.loadedImageInfo)
+            root.originalWidth = loadedImageInfo.width
+            root.originalHeight = loadedImageInfo.height
+            
+            root.updatingValues = true
+            widthSpinBox.value = root.originalWidth
+            heightSpinBox.value = root.originalHeight
+            root.updatingValues = false
+        }
+
         function onProcessingStarted(operation) {
             root.isProcessing = true
         }

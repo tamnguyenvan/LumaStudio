@@ -23,13 +23,25 @@ ColumnLayout {
     Connections {
         target: appController
         function onImageLoaded(width, height, size) {
-            console.log("Image loaded:", width, "x", height)
+            console.log("Crop tools Image loaded:", width, "x", height)
             root.originalWidth = width
             root.originalHeight = height
             
             root.updatingValues = true
             widthSpinBox.value = width
             heightSpinBox.value = height
+            root.updatingValues = false
+        }
+
+        function onProcessorChanged(processorName) {
+            console.log("Processor changed:", processorName)
+            var loadedImageInfo = appController.loadedImageInfo
+            root.originalWidth = loadedImageInfo.width
+            root.originalHeight = loadedImageInfo.height
+            
+            root.updatingValues = true
+            widthSpinBox.value = root.originalWidth
+            heightSpinBox.value = root.originalHeight
             root.updatingValues = false
         }
 
